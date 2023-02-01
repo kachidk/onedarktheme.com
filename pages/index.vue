@@ -18,12 +18,36 @@
 
       <div class="flex flex-wrap justify-center gap-4 mt-14">
         <div class="flex flex-col items-center gap-1">
-          <div class="w-20 h-20 bg-onedark-blue rounded-xl"></div>
-          <kbd class="kbd kbd-sm">#gsgsgg</kbd>
+          <div class="w-20 h-20 bg-onedark-black rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#282C34</kbd>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-20 h-20 bg-onedark-red rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#E06C75</kbd>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-20 h-20 bg-onedark-green rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#98C379</kbd>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-20 h-20 bg-onedark-yellow rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#E5C07B</kbd>
         </div>
         <div class="flex flex-col items-center gap-1">
           <div class="w-20 h-20 bg-onedark-blue rounded-xl"></div>
-          <kbd class="kbd kbd-sm">#gsgsgg</kbd>
+          <kbd class="kbd kbd-sm">#61AFEF</kbd>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-20 h-20 bg-onedark-purple rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#C678DD</kbd>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-20 h-20 bg-onedark-fountainblue rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#56B6C2</kbd>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <div class="w-20 h-20 bg-onedark-gray rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#ABB2BF</kbd>
         </div>
       </div>
     </div>
