@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="default">
     <div class="flex flex-col items-center justify-center min-h-screen">
-      <img src="/assets/img/wallpaper.png" class="max-w-md -mt-10" alt="hero" />
+      <img src="/assets/img/wallpaper.png" class="max-w-md" alt="hero" />
       <div>
         <div class="text-5xl font-bold text-center">Eliminate the cost of context switching</div>
         <div class="mt-2 text-center">
@@ -17,60 +17,80 @@
       </div>
 
       <div class="flex flex-wrap justify-center gap-4 mt-14">
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-black rounded-xl"></div>
           <kbd class="kbd kbd-sm">#282C34</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-red rounded-xl"></div>
           <kbd class="kbd kbd-sm">#E06C75</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-green rounded-xl"></div>
           <kbd class="kbd kbd-sm">#98C379</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-yellow rounded-xl"></div>
           <kbd class="kbd kbd-sm">#E5C07B</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-blue rounded-xl"></div>
           <kbd class="kbd kbd-sm">#61AFEF</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-purple rounded-xl"></div>
           <kbd class="kbd kbd-sm">#C678DD</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-fountainblue rounded-xl"></div>
           <kbd class="kbd kbd-sm">#56B6C2</kbd>
         </div>
-        <div class="flex flex-col items-center gap-1">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-gray rounded-xl"></div>
           <kbd class="kbd kbd-sm">#ABB2BF</kbd>
         </div>
       </div>
     </div>
-    <div class="max-w-3xl p-4 mx-auto">
-      <section class="min-h-screen">
-        <div class="mx-auto text-3xl font-bold w-fit">Ports</div>
-        <div class="flex flex-col items-center gap-4 mx-auto mt-2 md:flex-row w-fit">
-          <div class="text-lg whitespace-nowrap w-fit">Showing {{ ports.length }} app(s)</div>
-          <input
-            v-model="search"
-            type="text"
-            placeholder="Search..."
-            class="input input-bordered"
-          />
-        </div>
-        <div v-auto-animate class="grid gap-4 mt-12 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
-          <div v-for="(el, i) in ports" :key="i" class="">
-            <img :src="el.image" class="w-48 h-48 mx-auto rounded-full" :alt="el.name" />
-            <div class="text-center">{{ el.name }}</div>
+
+    <section class="max-w-5xl min-h-screen p-4 mx-auto">
+      <div class="mx-auto text-3xl font-bold w-fit">Ports</div>
+      <div class="flex flex-col items-center gap-4 mx-auto mt-2 md:flex-row w-fit">
+        <div class="text-lg whitespace-nowrap w-fit">Showing {{ ports.length }} app(s)</div>
+        <input v-model="search" type="text" placeholder="Search..." class="input input-bordered" />
+      </div>
+      <div v-auto-animate class="grid gap-4 mt-12 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
+        <a
+          v-for="(el, i) in ports"
+          :key="i"
+          :href="el.link"
+          target="_blank"
+          class="duration-200 group hover:transform hover:-translate-x-2 hover:-translate-y-2 hover:scale-x-105"
+        >
+          <img :src="el.image" class="w-48 h-48 mx-auto rounded-full" :alt="el.name" />
+          <div
+            class="text-4xl font-bold text-center duration-200 group-odd:group-hover:text-onedark-red group-even:group-hover:text-onedark-green"
+          >
+            {{ el.name }}
           </div>
-        </div>
-      </section>
-    </div>
+        </a>
+      </div>
+    </section>
   </NuxtLayout>
 </template>
 
@@ -78,13 +98,12 @@
 import _ports from "@/assets/data/ports";
 
 const search = ref("");
-const ports = ref(_ports);
 
-watch([search], () => {
-  if (search.value.length > 0) {
-    ports.value = ports.value.filter((el) => el.keywords.some((xy) => xy.includes(search.value)));
-  } else {
-    ports.value = _ports;
-  }
+const ports = computed(() => {
+  return _ports.filter(
+    (el) =>
+      el.keywords.some((xy) => xy.toLowerCase().includes(search.value.toLowerCase())) ||
+      el.name.toLowerCase().includes(search.value.toLowerCase())
+  );
 });
 </script>

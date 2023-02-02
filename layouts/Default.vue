@@ -2,7 +2,7 @@
   <div class="min-h-screen grid grid-rows-[auto,1fr,auto]">
     <div class="navbar">
       <div class="flex-1">
-        <div class="btn btn-ghost normal-case text-xl">
+        <div class="text-xl normal-case btn btn-ghost">
           <div class="text-onedark-blue">one</div>
           <div class="text-onedark-purple">dark</div>
           <div class="text-onedark-green">theme</div>
@@ -13,7 +13,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
-            class="h-6 w-6"
+            class="w-6 h-6"
             viewBox="0 0 16 16"
           >
             <path
@@ -26,7 +26,7 @@
     <div>
       <slot />
     </div>
-    <footer class="footer footer-center p-4 text-base-content">
+    <footer class="p-4 mt-20 footer footer-center text-base-content">
       <div>
         <div>
           Made with ♥ by
