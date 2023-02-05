@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <div class="flex flex-col items-center justify-center min-h-screen">
+    <div class="flex flex-col items-center justify-center min-h-screen p-4">
       <img src="/assets/img/wallpaper.png" class="max-w-md" alt="hero" />
       <div>
         <div class="text-5xl font-bold text-center">Eliminate the cost of context switching</div>
@@ -20,8 +20,20 @@
         <div
           class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
         >
+          <div class="w-20 h-20 bg-[#21252B] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#21252B</kbd>
+        </div>
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
           <div class="w-20 h-20 bg-onedark-black rounded-xl"></div>
           <kbd class="kbd kbd-sm">#282C34</kbd>
+        </div>
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
+          <div class="w-20 h-20 bg-[#323842] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#323842</kbd>
         </div>
         <div
           class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
@@ -64,6 +76,18 @@
         >
           <div class="w-20 h-20 bg-onedark-gray rounded-xl"></div>
           <kbd class="kbd kbd-sm">#ABB2BF</kbd>
+        </div>
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
+          <div class="w-20 h-20 bg-[#DCDFE4] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#DCDFE4</kbd>
+        </div>
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
+          <div class="w-20 h-20 bg-[#FFFFFF] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#FFFFFF</kbd>
         </div>
       </div>
     </div>
