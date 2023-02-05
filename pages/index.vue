@@ -80,14 +80,14 @@
         <div
           class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
         >
-          <div class="w-20 h-20 bg-[#DCDFE4] rounded-xl"></div>
-          <kbd class="kbd kbd-sm">#DCDFE4</kbd>
+          <div class="w-20 h-20 bg-[#D4D8DF] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#D4D8DF</kbd>
         </div>
         <div
           class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
         >
-          <div class="w-20 h-20 bg-[#FFFFFF] rounded-xl"></div>
-          <kbd class="kbd kbd-sm">#FFFFFF</kbd>
+          <div class="w-20 h-20 bg-[#F6F7F9] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#F6F7F9</kbd>
         </div>
       </div>
     </div>
