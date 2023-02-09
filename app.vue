@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 useHead({
-  title: "One dark theme",
+  title: "One Dark Theme",
 });
 </script>

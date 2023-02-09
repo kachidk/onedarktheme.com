@@ -34,6 +34,6 @@
 
 <script setup lang="ts">
 useHead({
-  title: "One dark theme for Slack",
+  title: "One Dark Theme for Slack",
 });
 </script>
