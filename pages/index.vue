@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <section class="max-w-5xl min-h-screen p-4 mx-auto mt-8">
+    <section class="max-w-5xl min-h-screen p-4 mx-auto mt-20">
       <div class="mx-auto text-3xl font-bold w-fit">Ports</div>
       <div class="flex flex-col items-center gap-4 mx-auto mt-2 md:flex-row w-fit">
         <div class="text-lg whitespace-nowrap w-fit">Showing {{ ports.length }} app(s)</div>
