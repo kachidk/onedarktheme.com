@@ -1,9 +1,11 @@
 <template>
   <NuxtLayout name="default">
     <div class="flex flex-col items-center justify-center min-h-screen p-4">
-      <img src="/assets/img/wallpaper.png" class="max-w-md" alt="hero" />
+      <img src="/assets/img/wallpaper.png" class="max-w-md rounded-2xl" alt="hero" />
       <div>
-        <div class="text-5xl font-bold text-center">Eliminate the cost of context switching</div>
+        <div class="mt-4 text-5xl font-bold text-center">
+          Eliminate the cost of context switching
+        </div>
         <div class="mt-2 text-center">
           A collection of ports inspired by the excellent
           <a
@@ -90,9 +92,31 @@
           <kbd class="kbd kbd-sm">#F6F7F9</kbd>
         </div>
       </div>
+
+      <div class="mx-auto mt-8 text-xl font-bold w-fit">Darker</div>
+      <div class="flex flex-wrap justify-center gap-4 mt-4">
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
+          <div class="w-20 h-20 bg-[#1E2227] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#1E2227</kbd>
+        </div>
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
+          <div class="w-20 h-20 bg-[#23272E] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#23272E</kbd>
+        </div>
+        <div
+          class="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2"
+        >
+          <div class="w-20 h-20 bg-[#323842] rounded-xl"></div>
+          <kbd class="kbd kbd-sm">#323842</kbd>
+        </div>
+      </div>
     </div>
 
-    <section class="max-w-5xl min-h-screen p-4 mx-auto">
+    <section class="max-w-5xl min-h-screen p-4 mx-auto mt-8">
       <div class="mx-auto text-3xl font-bold w-fit">Ports</div>
       <div class="flex flex-col items-center gap-4 mx-auto mt-2 md:flex-row w-fit">
         <div class="text-lg whitespace-nowrap w-fit">Showing {{ ports.length }} app(s)</div>
