@@ -1,113 +1,129 @@
-import Image from 'next/image'
+"use client";
+
+import { Fragment, useState } from "react";
+import _ports from "@/data/ports";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export default function Home() {
+  const [search, setSearch] = useState("");
+  const [animationParent] = useAutoAnimate();
+
+  const ports = _ports.filter(
+    (el) =>
+      el.keywords.some((xy) => xy.toLowerCase().includes(search.toLowerCase())) ||
+      el.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Fragment>
+      <div className="flex flex-col items-center justify-center min-h-screen p-4 pb-24 bg-[#272c33]">
+        <img src="/assets/img/wallpaper.png" className="max-w-md rounded-2xl" alt="hero" />
+        <div>
+          <div className="mt-4 text-5xl font-bold text-center">A Collection of Muted Colors</div>
+          <div className="mt-2 text-center">
+            Inspired by the&nbsp;
+            <a
+              href="https://github.com/atom/atom/tree/master/packages/one-dark-syntax"
+              className="underline"
+            >
+              One Dark theme
+            </a>
+            &nbsp;for the Atom text editor.
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-center max-w-2xl gap-4 mx-auto mt-14">
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-crust rounded-xl"></div>
+            <kbd className="kbd kbd-sm">
+              <span>Crust</span>
+              <span className="ml-2">#1E2227</span>
+            </kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-base rounded-xl"></div>
+            <kbd className="kbd kbd-sm">
+              <span>Base</span>
+              <span className="ml-2">#21252B</span>
+            </kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-mantle rounded-xl"></div>
+            <kbd className="kbd kbd-sm">
+              <span>Mantle</span>
+              <span className="ml-2">#323842</span>
+            </kbd>
+          </div>
+          <div className="w-full"></div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-red rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#E06C75</kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-green rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#98C379</kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-yellow rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#E5C07B</kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-blue rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#61AFEF</kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-purple rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#C678DD</kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-fountainblue rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#56B6C2</kbd>
+          </div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-gray rounded-xl"></div>
+            <kbd className="kbd kbd-sm">#ABB2BF</kbd>
+          </div>
+          <div className="w-full"></div>
+          <div className="flex flex-col items-center gap-1 duration-300 hover:transform hover:-translate-y-2">
+            <div className="w-20 h-20 bg-onedark-text rounded-xl"></div>
+            <kbd className="kbd kbd-sm">
+              <span>Text</span>
+              <span className="ml-2">#F6F7F9</span>
+            </kbd>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      <section className="max-w-5xl min-h-screen p-4 mx-auto mt-20">
+        <div className="mx-auto text-3xl font-bold w-fit">Ports</div>
+        <div className="flex flex-col items-center gap-4 mx-auto mt-2 md:flex-row w-fit">
+          <div className="text-lg whitespace-nowrap w-fit">Showing {ports.length} app(s)</div>
+          <input
+            onInput={(e) => setSearch(e.currentTarget.value)}
+            type="text"
+            placeholder="Search..."
+            className="input input-bordered"
+          />
+        </div>
+        <div
+          ref={animationParent}
+          className="grid gap-4 mt-12 gap-y-8 sm:grid-cols-2 md:grid-cols-3"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          {ports.map((el, i) => (
+            <a
+              key={i}
+              href={el.link}
+              target="_blank"
+              className="duration-200 group hover:transform hover:-translate-x-2 hover:-translate-y-2 hover:scale-x-105"
+            >
+              <img src={el.image} className="w-48 h-48 mx-auto rounded-full" alt={el.name} />
+              <div className="text-4xl font-bold text-center duration-200 group-odd:group-hover:text-onedark-red group-even:group-hover:text-onedark-green">
+                {el.name}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    </Fragment>
+  );
 }

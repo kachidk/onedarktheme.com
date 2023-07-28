@@ -1,0 +1,11 @@
+{
+  "printWidth": 100,
+  "singleQuote": false,
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "ignore",
+  "arrowParens": "always",
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "quoteProps": "consistent"
+}
